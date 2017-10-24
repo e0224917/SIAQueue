@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">SIAQueue</string>
+    <string name="identity_id_test">us-east-1:6cb8b4d2-f81b-4fa2-ba76-5ce5d7f61f0b</string>
+    <string name="bot_name">SIACustomerServiceBot</string>
+    <string name="bot_alias">SIACS</string>
+    <string name="queue_ticket_title">Queue Ticket</string>
+    <string name="instruct_text">To serve you better, please select information as below</string>
+    <string name="have_krysflyer_text">I have KrysFlyer Number</string>
+    <string name="forgot_krysflyer_text">I forgot the Krysflyer Number</string>
+    <string name="continue_button"><![CDATA[Continue>>]]></string>
+    <string name="krysflyer_hint">Please enter the KrysFlyer Number here.</string>
+    <string name="no_krysflyer_text">I have no KrysFlyer Number</string>
+    <string name="sia_logo_desc">SIA logo</string>
 </resources>

@@ -3,6 +3,8 @@ package com.flymetothemoon.siaqueue.retrofit;
 
 import com.flymetothemoon.siaqueue.retrofit.model.FTResponse;
 import com.flymetothemoon.siaqueue.retrofit.model.GetPassenger;
+import com.flymetothemoon.siaqueue.retrofit.model.GetProfile;
+import com.flymetothemoon.siaqueue.retrofit.model.KrisflyerRequest;
 import com.flymetothemoon.siaqueue.retrofit.model.PassengerRequest;
 
 import retrofit2.Call;
@@ -18,4 +20,8 @@ public interface SIAService {
     @Headers("x-api-key: du1yO8KLZm9PfFeg6OHQW8CFcpK1RMym3JXp78Uk")
     @POST("checkin/getpassenger")
     Call<FTResponse<GetPassenger>> getPassenger(@Body PassengerRequest request);
+
+    @Headers("x-api-key: du1yO8KLZm9PfFeg6OHQW8CFcpK1RMym3JXp78Uk")
+    @POST("krisflyer/getprofile")
+    Call<FTResponse<GetProfile>> getKrisflyerProfile(@Body KrisflyerRequest request);
 }
