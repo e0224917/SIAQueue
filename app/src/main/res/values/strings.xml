@@ -23,4 +23,22 @@
     <string name="year_hint">YYYY</string>
     <string name="email_text">Registered Email address*</string>
     <string name="email_hint">Eg. myemail@gmail.com</string>
+    <string name="no_krisflyer_header_text">Your personalized information</string>
+    <string name="no_krisflyer_sub_text">We would like to serve you better, please let us know about you!</string>
+    <string name="title_text">Title*</string>
+    <string name="location_text">Location*</string>
+    <string name="local_text">Local</string>
+    <string name="oversea_text">Oversea</string>
+    <string name="age_group_text">Age group*</string>
+
+    <string-array name="title_array">
+        <item>Mr.</item>
+        <item>Ms.</item>
+    </string-array>
+
+    <string-array name="age_group">
+        <item>Less than 30 years old</item>
+        <item>From 30 to 50 years old</item>
+        <item>Over 50 years old</item>
+    </string-array>
 </resources>

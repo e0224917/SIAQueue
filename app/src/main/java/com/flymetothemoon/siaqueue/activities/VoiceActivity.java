@@ -1,4 +1,4 @@
-package com.flymetothemoon.siaqueue;
+package com.flymetothemoon.siaqueue.activities;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -12,6 +12,7 @@ import com.amazonaws.mobileconnectors.lex.interactionkit.config.InteractionConfi
 import com.amazonaws.mobileconnectors.lex.interactionkit.ui.InteractiveVoiceView;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.util.StringUtils;
+import com.flymetothemoon.siaqueue.R;
 
 import java.util.Locale;
 import java.util.Map;
