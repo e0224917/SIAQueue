@@ -36,27 +36,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/main_activity_toolbar"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="60dp"
         android:background="@color/colorGray"
         android:orientation="vertical"
-        android:padding="10dp">
+        android:padding="20dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
             android:text="@string/instruct_text"
-            android:textSize="16sp" />
+            android:textSize="20sp" />
 
         <FrameLayout
             android:id="@+id/have_krisflyer_layout"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_margin="10dp"
+            android:layout_margin="20dp"
             android:background="@color/white">
 
             <android.support.v7.widget.AppCompatButton
@@ -67,23 +67,23 @@
                 android:text="@string/have_krisflyer_text"
                 android:textAllCaps="false"
                 android:textColor="@color/colorPrimary"
-                android:textSize="16sp" />
+                android:textSize="20sp" />
         </FrameLayout>
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginStart="10dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
             android:hint="@string/krisflyer_hint"
-            android:textSize="16sp" />
+            android:textSize="20sp" />
 
         <FrameLayout
             android:id="@+id/forgot_krisflyer_layout"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_margin="10dp"
+            android:layout_margin="20dp"
             android:background="@color/white">
 
             <android.support.v7.widget.AppCompatButton
@@ -94,14 +94,14 @@
                 android:text="@string/forgot_krisflyer_text"
                 android:textAllCaps="false"
                 android:textColor="@color/colorPrimary"
-                android:textSize="16sp" />
+                android:textSize="20sp" />
         </FrameLayout>
 
         <FrameLayout
             android:id="@+id/no_krisflyer_layout"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_margin="10dp"
+            android:layout_margin="20dp"
             android:background="@color/white">
 
             <android.support.v7.widget.AppCompatButton
@@ -112,7 +112,7 @@
                 android:text="@string/no_krisflyer_text"
                 android:textAllCaps="false"
                 android:textColor="@color/colorPrimary"
-                android:textSize="16sp" />
+                android:textSize="20sp" />
         </FrameLayout>
 
         <Button
@@ -120,11 +120,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_margin="10dp"
+            android:layout_margin="20dp"
             android:background="@color/colorOrange"
             android:text="@string/continue_button"
             android:textAllCaps="false"
-            android:textSize="16sp" />
+            android:textSize="20sp" />
     </LinearLayout>
 
 </RelativeLayout>

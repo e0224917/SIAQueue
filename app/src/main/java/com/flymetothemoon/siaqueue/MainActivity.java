@@ -9,10 +9,10 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private AppCompatButton haveKrysFlyerButton;
-    private AppCompatButton forgotKrysFlyerButton;
-    private AppCompatButton noKrysFlyerButton;
-    private Button nextButton;
+    private AppCompatButton haveKrisFlyerButton;
+    private AppCompatButton forgotKrisFlyerButton;
+    private AppCompatButton noKrisFlyerButton;
+    private Button continueButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,25 +37,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void init() {
-        haveKrysFlyerButton = findViewById(R.id.have_krysflyer_button);
-        forgotKrysFlyerButton = findViewById(R.id.forgot_krysflyer_button);
-        noKrysFlyerButton = findViewById(R.id.no_krysflyer_button);
-        nextButton = findViewById(R.id.next_button);
+        haveKrisFlyerButton = findViewById(R.id.have_krisflyer_button);
+        forgotKrisFlyerButton = findViewById(R.id.forgot_krisflyer_button);
+        noKrisFlyerButton = findViewById(R.id.no_krisflyer_button);
+        continueButton = findViewById(R.id.continue_button);
 
-        haveKrysFlyerButton.setOnClickListener(this);
-        forgotKrysFlyerButton.setOnClickListener(this);
-        noKrysFlyerButton.setOnClickListener(this);
-        nextButton.setOnClickListener(this);
+        haveKrisFlyerButton.setOnClickListener(this);
+        forgotKrisFlyerButton.setOnClickListener(this);
+        noKrisFlyerButton.setOnClickListener(this);
+        continueButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.have_krysflyer_button:
+            case R.id.have_krisflyer_button:
                 break;
-            case R.id.forgot_krysflyer_button:
+            case R.id.forgot_krisflyer_button:
+                startActivity(new Intent(this, ForgotKrisFlyerActivity.class));
                 break;
-            case R.id.no_krysflyer_button:
+            case R.id.no_krisflyer_button:
                 break;
             case R.id.next_button:
                 startActivity(new Intent(this, VoiceActivity.class));
