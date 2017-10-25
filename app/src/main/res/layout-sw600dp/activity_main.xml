@@ -56,7 +56,9 @@
             android:id="@+id/have_krisflyer_layout"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_margin="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
             android:background="@color/white">
 
             <android.support.v7.widget.AppCompatButton
@@ -73,7 +75,7 @@
         <EditText
             android:id="@+id/krisflyer_number_input"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginStart="20dp"
@@ -124,8 +126,10 @@
             android:layout_gravity="end"
             android:layout_margin="20dp"
             android:background="@color/colorOrange"
+            android:padding="15dp"
             android:text="@string/continue_button"
             android:textAllCaps="false"
+            android:textColor="@color/white"
             android:textSize="20sp" />
     </LinearLayout>
 
