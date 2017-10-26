@@ -1,175 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorGray"
     tools:context="com.flymetothemoon.siaqueue.activities.ForgotKrisFlyerActivity">
 
-    <RelativeLayout
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/forgot_krisflyer_activity_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorGray">
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        android:gravity="center_vertical"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/AppTheme">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/forgot_krisflyer_activity_toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            android:elevation="4dp"
-            android:gravity="center_vertical"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="@style/AppTheme">
-
-            <ImageView
-                android:layout_width="140dp"
-                android:layout_height="80dp"
-                android:layout_marginStart="50dp"
-                android:contentDescription="@string/sia_logo_desc"
-                android:src="@drawable/sia_logo" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/queue_ticket_title"
-                android:textColor="@color/white"
-                android:textSize="30sp" />
-
-        </android.support.v7.widget.Toolbar>
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="50dp"
+            android:contentDescription="@string/sia_logo_desc"
+            android:src="@drawable/sia_logo" />
 
         <TextView
-            android:id="@+id/header_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/forgot_krisflyer_activity_toolbar"
-            android:layout_marginBottom="5dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="50dp"
-            android:text="@string/retrieve_krisflyer_text"
-            android:textColor="@color/colorBlue"
+            android:layout_gravity="center"
+            android:text="@string/queue_ticket_title"
+            android:textColor="@color/white"
             android:textSize="30sp" />
 
-        <LinearLayout
-            android:id="@+id/input_layout"
-            android:layout_width="900dp"
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/header_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/forgot_krisflyer_activity_toolbar"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/retrieve_krisflyer_text"
+        android:textColor="@color/colorBlue"
+        android:textSize="30sp" />
+
+    <LinearLayout
+        android:id="@+id/input_layout"
+        android:layout_width="900dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header_text"
+        android:layout_marginStart="50dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/header_text"
-            android:layout_marginStart="50dp"
-            android:background="@color/white"
-            android:orientation="vertical"
-            android:padding="20dp">
+            android:lines="2"
+            android:text="@string/forgot_krisflyer_number_text"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:lines="2"
-                android:text="@string/forgot_krisflyer_number_text"
-                android:textSize="20sp" />
+                android:layout_marginBottom="10dp"
+                android:text="@string/first_given_name_text" />
 
-            <LinearLayout
-                android:layout_width="500dp"
+            <EditText
+                android:id="@+id/input_first_name"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="vertical">
+                android:layout_marginBottom="10dp"
+                android:hint="@string/first_name_hint"
+                android:inputType="textPersonName" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:text="@string/first_given_name_text" />
-
-                <EditText
-                    android:id="@+id/input_first_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:hint="@string/first_name_hint"
-                    android:inputType="textPersonName" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:text="@string/last_family_name_text" />
-
-                <EditText
-                    android:id="@+id/input_last_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:hint="@string/last_name_hint"
-                    android:inputType="textPersonName" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:text="@string/date_of_birth_text" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:orientation="horizontal">
-
-                    <EditText
-                        android:id="@+id/input_day"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="@drawable/edit_text_border"
-                        android:hint="@string/day_hint"
-                        android:inputType="number" />
-
-                    <EditText
-                        android:id="@+id/input_month"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/edit_text_border"
-                        android:hint="@string/month_hint"
-                        android:inputType="number" />
-
-                    <EditText
-                        android:id="@+id/input_year"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:background="@drawable/edit_text_border"
-                        android:hint="@string/year_hint"
-                        android:inputType="number" />
-
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:text="@string/email_text" />
-
-                <EditText
-                    android:id="@+id/input_email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/email_hint"
-                    android:inputType="textEmailAddress" />
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/continue_button"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginEnd="90dp"
-                android:background="@color/colorOrange"
-                android:text="@string/continue_button"
-                android:textAllCaps="false"
-                android:textColor="@color/white" />
+                android:layout_marginBottom="10dp"
+                android:text="@string/last_family_name_text" />
+
+            <EditText
+                android:id="@+id/input_last_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/last_name_hint"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="@string/date_of_birth_text" />
+
+            <EditText
+                android:id="@+id/input_dob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="@string/date_hint"
+                android:inputType="date" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="@string/email_text" />
+
+            <EditText
+                android:id="@+id/input_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/email_hint"
+                android:inputType="textEmailAddress" />
 
         </LinearLayout>
 
-    </RelativeLayout>
-</ScrollView>
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="90dp"
+            android:background="@color/colorOrange"
+            android:padding="15dp"
+            android:text="@string/submit_text"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
 
+    </LinearLayout>
+
+</RelativeLayout>

@@ -11,4 +11,19 @@ public class FTResponse<T> {
     private String message;
     private T response;
 
+    public String getStatus() {
+        return status;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public T getResponse() {
+        return response;
+    }
 }

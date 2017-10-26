@@ -44,7 +44,6 @@
             android:textColor="@color/text_color_1" />
     </LinearLayout>
 
-
     <include
         android:id="@+id/voiceInterface"
         layout="@layout/voice_component"
