@@ -1,24 +1,5 @@
 package com.flymetothemoon.siaqueue;
 
-import android.content.Context;
-import android.media.AudioManager;
-import android.media.MediaPlayer;
-import android.util.Log;
-
-import com.amazonaws.auth.CognitoCachingCredentialsProvider;
-import com.amazonaws.regions.Regions;
-import com.amazonaws.services.polly.AmazonPollyPresigningClient;
-import com.amazonaws.services.polly.model.DescribeVoicesRequest;
-import com.amazonaws.services.polly.model.DescribeVoicesResult;
-import com.amazonaws.services.polly.model.OutputFormat;
-import com.amazonaws.services.polly.model.SynthesizeSpeechPresignRequest;
-import com.amazonaws.services.polly.model.Voice;
-import com.flymetothemoon.siaqueue.model.User;
-
-import java.io.IOException;
-import java.net.URL;
-import java.util.List;
-
 /**
  * Created by nhatton on 10/24/17.
  */
@@ -29,6 +10,7 @@ public class QueueManager {
     private String mCustomerTitle;
     private String mCustomerName;
     private String mKrisFlyerName;
+    private String mPNR;
 
     static {
         sInstance = new QueueManager();
@@ -64,6 +46,14 @@ public class QueueManager {
 
     public void setKrisFlyerName(String mKrisFlyerName) {
         this.mKrisFlyerName = mKrisFlyerName;
+    }
+
+    public String getPNR() {
+        return mPNR;
+    }
+
+    public void setPNR(String mPNR) {
+        this.mPNR = mPNR;
     }
 
     public String getGreeting() {

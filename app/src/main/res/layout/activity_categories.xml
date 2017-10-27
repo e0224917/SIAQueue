@@ -70,18 +70,18 @@
 
             <ListView
                 android:id="@+id/main_request_list"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:divider="@android:color/transparent"
                 android:dividerHeight="10.0sp"
                 android:layout_marginEnd="20dp"
-                android:layout_weight="1" />
+                android:layout_weight="2" />
 
             <ListView
                 android:id="@+id/sub_request_list"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2" />
+                android:layout_weight="1" />
         </LinearLayout>
 
     </LinearLayout>

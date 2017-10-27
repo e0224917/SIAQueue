@@ -29,11 +29,11 @@ public class InputKrisFlyerDialog extends Activity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dialog_input_kris_flyer);
 
-        init();
+        initViews();
 
     }
 
-    private void init() {
+    private void initViews() {
         krisFlyerNumberInput = findViewById(R.id.krisflyer_number_input);
         Button okButton = findViewById(R.id.ok_button);
         Button cancelButton = findViewById(R.id.cancel_button);
@@ -47,32 +47,37 @@ public class InputKrisFlyerDialog extends Activity implements View.OnClickListen
         switch (v.getId()) {
             case R.id.ok_button:
                 final String krisFlyerNumber = krisFlyerNumberInput.getText().toString();
-                if (!krisFlyerNumber.isEmpty()) {
-                    Call<FTResponse<GetProfile>> message = SIAClient.getApiService()
-                            .getKrisflyerProfile(new KrisflyerRequest(krisFlyerNumber));
-                    message.enqueue(new Callback<FTResponse<GetProfile>>() {
-                        @Override
-                        public void onResponse(Call<FTResponse<GetProfile>> call, Response<FTResponse<GetProfile>> response) {
-                            if (response.isSuccessful()) {
-                                Log.e("Response", response.toString());
-                                GetProfile profile = response.body().getResponse();
 
-                                QueueManager.getInstance().setCustomerTitle(profile.getTitle());
-                                QueueManager.getInstance().setCustomerName(profile.getFirstName());
-                                QueueManager.getInstance().setKrisFlyerName(krisFlyerNumber);
-
-                                startActivity(new Intent(InputKrisFlyerDialog.this, CategoriesActivity.class));
-                            } else {
-                                Log.e("Error", "eeeerrrorrr");
-                            }
-                        }
-
-                        @Override
-                        public void onFailure(Call<FTResponse<GetProfile>> call, Throwable t) {
-                            Log.e("Error", t.getMessage());
-                        }
-                    });
+                if (krisFlyerNumber.isEmpty() || krisFlyerNumber.length() < 10) {
+                    krisFlyerNumberInput.setError(getString(R.string.error_krisflyer));
+                    return;
                 }
+
+                Call<FTResponse<GetProfile>> message = SIAClient.getApiService()
+                        .getKrisflyerProfile(new KrisflyerRequest(krisFlyerNumber));
+                message.enqueue(new Callback<FTResponse<GetProfile>>() {
+                    @Override
+                    public void onResponse(Call<FTResponse<GetProfile>> call, Response<FTResponse<GetProfile>> response) {
+                        if (response.isSuccessful()) {
+                            Log.e("Response", response.toString());
+                            GetProfile profile = response.body().getResponse();
+
+                            QueueManager.getInstance().setCustomerTitle(profile.getTitle());
+                            QueueManager.getInstance().setCustomerName(profile.getFirstName());
+                            QueueManager.getInstance().setKrisFlyerName(krisFlyerNumber);
+
+                            startActivity(new Intent(InputKrisFlyerDialog.this, CategoriesActivity.class));
+                        } else {
+                            Log.e("Error", "eeeerrrorrr");
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<FTResponse<GetProfile>> call, Throwable t) {
+                        Log.e("Error", t.getMessage());
+                    }
+                });
+
                 break;
             case R.id.cancel_button:
                 onBackPressed();

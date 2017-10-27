@@ -13,16 +13,22 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import com.flymetothemoon.siaqueue.R;
+import com.flymetothemoon.siaqueue.dialogs.ConfirmQueueDialog;
+import com.flymetothemoon.siaqueue.dialogs.InputPNRDialog;
 import com.flymetothemoon.siaqueue.model.RequestType;
 
 public class CategoriesActivity extends AppCompatActivity {
 
+    private static final int REQUEST_PNR = 2;
+    private static final int REQUEST_CONFIRM = 3;
     private ListView mainRequestListView;
     private ListView subRequestListView;
     private Button continueButton;
     private SparseBooleanArray[] subRequestChoices = new SparseBooleanArray[7];
     private SparseBooleanArray mainRequestChoices;
     private int currentRequestPosition;
+    private boolean isInputedPNR;
+    private boolean isForgotPNR;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,13 +97,21 @@ public class CategoriesActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 SparseBooleanArray sp = subRequestListView.getCheckedItemPositions().clone();
                 subRequestChoices[currentRequestPosition] = sp;
+
+                if (isForgotPNR || isInputedPNR) return;
+
+                boolean[] pnrRequiredList = RequestType.values()[currentRequestPosition].getPNRrequiredList();
+                if (pnrRequiredList[position]) {
+                    Intent intent = new Intent(CategoriesActivity.this, InputPNRDialog.class);
+                    startActivityForResult(intent, REQUEST_PNR);
+                }
             }
         });
 
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent());
+                startActivityForResult(new Intent(CategoriesActivity.this, ConfirmQueueDialog.class), REQUEST_CONFIRM);
             }
         });
     }
@@ -109,5 +123,20 @@ public class CategoriesActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_PNR) {
+            if (resultCode == RESULT_OK) {
+                isInputedPNR = true;
+            } else {
+                isForgotPNR = true;
+            }
+        } else if (requestCode == REQUEST_CONFIRM && resultCode == RESULT_OK) {
+            startActivity(new Intent(CategoriesActivity.this, MainActivity.class));
+            finish();
+        }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 }

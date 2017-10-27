@@ -59,9 +59,17 @@
             android:theme="@style/AppDialog" />
         <activity
             android:name=".activities.InteractActivity"
-            android:screenOrientation="landscape" />
+            android:parentActivityName=".activities.MainActivity" />
         <activity
             android:name=".dialogs.ConfirmQueueDialog"
+            android:label="Confirm"
+            android:launchMode="singleTop"
+            android:parentActivityName=".activities.CategoriesActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppDialog" />
+        <activity
+            android:name=".dialogs.InputPNRDialog"
+            android:label="Input PNR"
             android:launchMode="singleTop"
             android:parentActivityName=".activities.CategoriesActivity"
             android:screenOrientation="landscape"

@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 
 import com.flymetothemoon.siaqueue.R;
 import com.flymetothemoon.siaqueue.dialogs.InputKrisFlyerDialog;
@@ -14,6 +16,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private AppCompatButton haveKrisFlyerButton;
     private AppCompatButton forgotKrisFlyerButton;
     private AppCompatButton noKrisFlyerButton;
+    private Button speakButton;
+    private ImageView siaLogo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +31,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         haveKrisFlyerButton = findViewById(R.id.have_krisflyer_button);
         forgotKrisFlyerButton = findViewById(R.id.forgot_krisflyer_button);
         noKrisFlyerButton = findViewById(R.id.no_krisflyer_button);
+        speakButton = findViewById(R.id.speak_button);
+        siaLogo = findViewById(R.id.sia_logo);
 
         haveKrisFlyerButton.setOnClickListener(this);
         forgotKrisFlyerButton.setOnClickListener(this);
         noKrisFlyerButton.setOnClickListener(this);
+        speakButton.setOnClickListener(this);
+        siaLogo.setOnClickListener(this);
     }
 
     @Override
@@ -47,6 +55,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.submit_button:
                 startActivity(new Intent(this, VoiceActivity.class));
+                break;
+            case R.id.sia_logo:
+            case R.id.speak_button:
+                startActivity(new Intent(MainActivity.this, InteractActivity.class));
+                break;
         }
     }
 
