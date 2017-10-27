@@ -25,7 +25,12 @@ public class NoKrisFlyerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_no_kris_flyer);
 
+        initToolbar();
         initViews();
+
+    }
+
+    private void initToolbar() {
         Toolbar toolbar = findViewById(R.id.no_krisflyer_activity_toolbar);
         this.setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {

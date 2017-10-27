@@ -5,34 +5,100 @@
     android:layout_height="match_parent"
     tools:context="com.flymetothemoon.siaqueue.activities.CategoriesActivity">
 
-    <TextView
-        android:id="@+id/voice_output"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/categories_activity_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/edit_text_border"
-        android:textSize="30sp" />
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        android:gravity="center_vertical"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/AppTheme">
+
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="50dp"
+            android:contentDescription="@string/sia_logo_desc"
+            android:src="@drawable/sia_logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/queue_ticket_title"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+
+    </android.support.v7.widget.Toolbar>
 
     <TextView
-        android:layout_marginBottom="20dp"
-        android:layout_above="@+id/voice_input"
+        android:id="@+id/header_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:labelFor="@id/voice_input"
-        android:text="Input text" />
+        android:layout_below="@id/categories_activity_toolbar"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/categories_header_text"
+        android:textColor="@color/colorBlue"
+        android:textSize="30sp" />
 
-    <EditText
-        android:id="@id/voice_input"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:id="@+id/input_layout"
+        android:layout_width="900dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:inputType="text" />
+        android:layout_below="@id/header_text"
+        android:layout_marginBottom="40dp"
+        android:layout_marginStart="50dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:text="@string/categories_sub_text"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <ListView
+                android:id="@+id/main_request_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="10.0sp"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="1" />
+
+            <ListView
+                android:id="@+id/sub_request_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2" />
+        </LinearLayout>
+
+    </LinearLayout>
 
     <Button
-        android:id="@+id/speak_button"
+        android:id="@+id/continue_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:text="Repeat" />
+        android:layout_gravity="end"
+        android:layout_marginBottom="40dp"
+        android:layout_marginEnd="90dp"
+        android:background="@color/colorOrange"
+        android:padding="15dp"
+        android:text="@string/continue_button"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
+
 </RelativeLayout>

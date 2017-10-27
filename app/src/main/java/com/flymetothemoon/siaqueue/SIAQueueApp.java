@@ -12,6 +12,6 @@ public class SIAQueueApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        QueueManager.getInstance().initPolly(this);
+        PollyControl.getInstance().initPolly(this);
     }
 }

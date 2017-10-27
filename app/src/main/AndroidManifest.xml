@@ -29,25 +29,43 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".activities.ForgotKrisFlyerActivity"
+            android:launchMode="singleTop"
             android:parentActivityName=".activities.MainActivity"
             android:screenOrientation="landscape"
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".activities.NoKrisFlyerActivity"
+            android:launchMode="singleTop"
             android:parentActivityName=".activities.MainActivity"
             android:screenOrientation="landscape"
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".activities.CategoriesActivity"
+            android:launchMode="singleTop"
             android:screenOrientation="landscape"
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".dialogs.InputKrisFlyerDialog"
             android:label="Input KrisFlyer Number"
+            android:launchMode="singleTop"
             android:parentActivityName=".activities.MainActivity"
             android:screenOrientation="landscape"
             android:theme="@style/AppDialog" />
-        <activity android:name=".dialogs.ConfirmKrisflyerDialog"></activity>
+        <activity
+            android:name=".dialogs.ConfirmKrisflyerDialog"
+            android:launchMode="singleTop"
+            android:parentActivityName=".activities.ForgotKrisFlyerActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppDialog" />
+        <activity
+            android:name=".activities.InteractActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".dialogs.ConfirmQueueDialog"
+            android:launchMode="singleTop"
+            android:parentActivityName=".activities.CategoriesActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppDialog" />
     </application>
 
 </manifest>

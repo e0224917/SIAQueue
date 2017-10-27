@@ -32,22 +32,97 @@
     <string name="age_group_text">Age group*</string>
     <string name="ok_text">OK</string>
     <string name="cancel_text">Cancel</string>
-    <string name="confirm_text">Please check your email to get your KrisFlyer Number</string>
+    <string name="confirm_text">We just sent your KrisFlyer Number to you. Please check your email.</string>
     <string name="submit_text">Submit</string>
     <string name="error_email">Please enter a valid email address.</string>
     <string name="date_hint">DD/MM/YYYY</string>
     <string name="error_first_name">Please enter your first name.</string>
     <string name="error_last_name">Please enter your last name.</string>
     <string name="error_dob">Please enter your date of birth.</string>
+    <string name="categories_header_text">Your requests</string>
+    <string name="categories_sub_text">Please select your request types (multiple types are accepted).</string>
+    <string name="confirm_print_text">Your queue ticket is printed.</string>
 
     <string-array name="title_array">
         <item>Mr.</item>
         <item>Ms.</item>
     </string-array>
 
-    <string-array name="age_group">
-        <item>Less than 30 years old</item>
-        <item>From 30 to 50 years old</item>
-        <item>Over 50 years old</item>
+    <string-array name="request_types">
+        <item>Reservation / Ticketing</item>
+        <item>Schedule / aircraft change</item>
+        <item>KrisFlyer / PPS</item>
+        <item>Special Handling</item>
+        <item>SilkAir</item>
+        <item>Travel Agent</item>
+        <item>Others</item>
     </string-array>
+
+    <string-array name="reservation_ticketing">
+        <item>New Booking</item>
+        <item>New Ticket Sales</item>
+        <item>Rebook</item>
+        <item>Reroute</item>
+        <item>Commercial Upgrade</item>
+        <item>Name Correction</item>
+        <item>Refund</item>
+        <item>Refund Appeals</item>
+        <item>Round-the-world/Airpasses</item>
+        <item>Meal/Seat/Assistance request</item>
+        <item>General Fare Enquiries</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="schedule_aircraft_change">
+        <item>Rebook</item>
+        <item>Reroute</item>
+        <item>Refund</item>
+        <item>Compensation</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="krisflyer_pps">
+        <item>Redemption</item>
+        <item>Redemption Upgrade</item>
+        <item>Redemption Changes</item>
+        <item>Redemption Enquiries</item>
+        <item>Other Airline Redemption</item>
+        <item>Waitlist Matters</item>
+        <item>Refunds</item>
+        <item>Membership Matters</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="special_handling">
+        <item>Unaccompanied minor</item>
+        <item>Medical assistance</item>
+        <item>Pets</item>
+        <item>Cargo</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="silkair">
+        <item>New Booking</item>
+        <item>New Ticket Sales</item>
+        <item>Rebook</item>
+        <item>Reroute</item>
+        <item>Commercial Upgrade</item>
+        <item>Name Correction</item>
+        <item>Refund</item>
+        <item>Refund Appeals</item>
+        <item>Letter of Indemnity / Card Verification</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="travel_agent">
+        <item>Rebook</item>
+        <item>Reroute</item>
+        <item>Commercial Upgrade</item>
+        <item>Refund</item>
+        <item>Name Correction</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="others" />
+
 </resources>
