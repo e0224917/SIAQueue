@@ -43,7 +43,7 @@
             android:name=".activities.CategoriesActivity"
             android:launchMode="singleTop"
             android:screenOrientation="landscape"
-            android:windowSoftInputMode="stateHidden" />
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name=".dialogs.InputKrisFlyerDialog"
             android:label="Input KrisFlyer Number"
@@ -59,7 +59,8 @@
             android:theme="@style/AppDialog" />
         <activity
             android:name=".activities.InteractActivity"
-            android:parentActivityName=".activities.MainActivity" />
+            android:parentActivityName=".activities.MainActivity"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".dialogs.ConfirmQueueDialog"
             android:label="Confirm"
